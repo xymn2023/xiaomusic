@@ -111,9 +111,6 @@ docker run -p 58090:8090 -v /xiaomusic_music:/app/music -v /xiaomusic_conf:/app/
 > 作者新写了一个更简洁的个人音乐服务器，支持更强的插件扩展 <https://github.com/mimusic-org/mimusic>
 
 > [!TIP]
-> 作者写的一个游戏服务器开发实战课程 <https://www.lanqiao.cn/courses/2770> ，购买时记得使用优惠码: `2CZ2UA5u` 。
-
-> [!TIP]
 > - 适用于 NAS 上安装的开源工具： <https://github.com/hanxi/tiny-nav>
 > - 适用于 NAS 上安装的网页打印机： <https://github.com/hanxi/cups-web>
 > - PVE 移动端 UI 界面：<https://github.com/hanxi/pve-touch>
