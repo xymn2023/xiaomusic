@@ -8,7 +8,6 @@ import base64
 import copy
 import json
 import os
-import random
 import time
 import urllib.parse
 from collections import OrderedDict
@@ -1148,7 +1147,7 @@ class MusicLibrary:
                     resolved_origin_url = resolved
                 else:
                     self.log.warning(
-                        f"resolve bilibili page url via yt-dlp failed, code:{proc.returncode}, stderr:{stderr.decode(errors=replace)[:500]}, page_url:{url}"
+                        f"resolve bilibili page url via yt-dlp failed, code:{proc.returncode}, stderr:{stderr.decode(errors='replace')[:500]}, page_url:{url}"
                     )
                     resolved = await self.url_cache.get(url, {}, self.config)
                     if resolved:

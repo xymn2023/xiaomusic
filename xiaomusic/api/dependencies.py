@@ -125,7 +125,7 @@ def verification(
         try:
             jwt.decode(token, session_secret, algorithms=["HS256"])
             return True
-        except:
+        except Exception:
             pass
 
     if not credentials:
@@ -237,7 +237,7 @@ class AuthStaticFiles(StaticFiles):
                 try:
                     jwt.decode(token, session_secret, algorithms=["HS256"])
                     is_authed = True
-                except:
+                except Exception:
                     pass
 
             if not is_authed:

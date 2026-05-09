@@ -1940,7 +1940,7 @@ class JSPluginManager:
             )
 
             if "devices" in setting_data:
-                for device_did, device_info in setting_data["devices"].items():
+                for _device_did, device_info in setting_data["devices"].items():
                     if "playlist2music" in device_info:
                         playlist2music = device_info["playlist2music"]
                         keys_to_remove = [
@@ -2774,7 +2774,7 @@ class JSPluginManager:
                 if val is not None:
                     try:
                         return int(val)
-                    except:
+                    except Exception:
                         continue
             return 0
 

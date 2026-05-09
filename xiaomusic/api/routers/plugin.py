@@ -23,7 +23,7 @@ router = APIRouter(dependencies=[Depends(verification)])
 
 
 @router.get("/api/platforms")
-def get_js_plugins():
+def get_platforms():
     """获取平台列表"""
     try:
         if (
@@ -216,7 +216,7 @@ async def import_online_plugin(request: Request):
 
 
 @router.get("/api/lxServer/test")
-async def get_openapi_info():
+async def test_lx_server():
     """测试lxServer接口"""
     try:
         return await xiaomusic.js_plugin_manager.test_lx_server()

@@ -77,7 +77,7 @@ class PluginManager:
                 raise ValueError("Unsupported plugin argument.")
             keys = [self._parse_plugin_arg(key) for key in arg.keys]
             values = [self._parse_plugin_arg(value) for value in arg.values]
-            return dict(zip(keys, values))
+            return dict(zip(keys, values, strict=False))
 
         raise ValueError("Unsupported plugin argument.")
 
