@@ -150,7 +150,9 @@ class Config:
     )
     keywords_play: str = os.getenv("XIAOMUSIC_KEYWORDS_PLAY", "播放歌曲,放歌曲")
     keywords_online_play: str = os.getenv("XIAOMUSIC_KEYWORDS_ONLINE_PLAY", "在线播放")
-    keywords_online_playlist_play: str = os.getenv("XIAOMUSIC_KEYWORDS_ONLINE_PLAYLIST", "在线歌单,搜索歌单")
+    keywords_online_playlist_play: str = os.getenv(
+        "XIAOMUSIC_KEYWORDS_ONLINE_PLAYLIST", "在线歌单,搜索歌单"
+    )
     keywords_singer_play: str = os.getenv("XIAOMUSIC_KEYWORDS_SINGER_PLAY", "播放歌手")
     keywords_stop: str = os.getenv("XIAOMUSIC_KEYWORDS_STOP", "关机,暂停,停止,停止播放")
     keywords_playlist: str = os.getenv(

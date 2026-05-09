@@ -367,9 +367,13 @@ class XiaoMusicDevice:
                         # 200是正常，206是部分内容(也是正常)
                         if resp.status in (200, 206):
                             is_url_ok = True
-                            self.log.info(f"探路成功！代理服务器存活，状态码: {resp.status}")
+                            self.log.info(
+                                f"探路成功！代理服务器存活，状态码: {resp.status}"
+                            )
                         else:
-                            self.log.warning(f"探路发现死链！代理服务器报错，状态码: {resp.status}")
+                            self.log.warning(
+                                f"探路发现死链！代理服务器报错，状态码: {resp.status}"
+                            )
             except Exception as e:
                 self.log.warning(f"探路超时或网络异常(插件解析失败): {e}")
 
@@ -382,7 +386,9 @@ class XiaoMusicDevice:
                     self.log.error("连续 5 次获取歌曲死链，触发第一层终极熔断！")
                     self._url_failed_cnt = 0
                     # 调用大管家的万能报错机制！
-                    await self.xiaomusic.handle_fatal_error(self.did, "连续多次获取歌曲失败，已为您停止")
+                    await self.xiaomusic.handle_fatal_error(
+                        self.did, "连续多次获取歌曲失败，已为您停止"
+                    )
                     return
 
                 # 没到 5 次，静默切下一首
@@ -400,9 +406,9 @@ class XiaoMusicDevice:
             self.log.info(f"播放 {name} 失败. 失败次数: {self._play_failed_cnt}")
             await asyncio.sleep(1)
             if (
-                    self.is_playing
-                    and self._last_cmd != "stop"
-                    and self._play_failed_cnt < 10
+                self.is_playing
+                and self._last_cmd != "stop"
+                and self._play_failed_cnt < 10
             ):
                 self._play_failed_cnt = self._play_failed_cnt + 1
                 await self._play_next()

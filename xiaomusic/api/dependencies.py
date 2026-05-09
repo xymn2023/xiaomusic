@@ -217,7 +217,9 @@ class AuthStaticFiles(StaticFiles):
     async def __call__(self, scope, receive, send) -> None:
         request = Request(scope, receive)
         # 系统提示音，不走任何校验，直接允许访问(修复启用安全验证后，无法播放系统提示音的问题)
-        if request.url.path.endswith(("/xiaomusic_ok.mp3", "/xiaomusic_error.mp3", "/silence.mp3", "/search.mp3")):
+        if request.url.path.endswith(
+            ("/xiaomusic_ok.mp3", "/xiaomusic_error.mp3", "/silence.mp3", "/search.mp3")
+        ):
             await super().__call__(scope, receive, send)
             return
         if not config.disable_httpauth:
